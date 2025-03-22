@@ -1,0 +1,94 @@
+# Define a non-parameterized function
+greet <- function() {
+  print("Hello, World!")
+}
+
+# Call the function
+greet()
+--------------------------------------------
+
+# Define a single-parameterized function
+square <- function(x) {
+  return(x^2)
+}
+
+# Call the function with a single argument
+result <- square(5)
+print(result)
+-------------------------------------------------------
+
+# Define a default parameterized function
+greet <- function(name = "Guest") {
+  print(paste("Hello,", name, "!"))
+}
+
+# Call the function with and without providing an argument
+greet("Alice")  # Passing an argument
+greet()         # Using the default value
+
+----------------------------------------------------------
+
+# Define a multiple-parameterized function
+add_numbers <- function(a, b) {
+  return(a + b)
+}
+
+# Call the function with two arguments
+result <- add_numbers(5, 7)
+print(result)
+
+------------------------------------------------------
+# Define a multiple-parameterized function with a return statement
+multiply_numbers <- function(a, b) {
+  result <- a * b
+  return(result)
+}
+
+# Call the function with two arguments
+product <- multiply_numbers(6, 4)
+print(product)
+
+----------------------------------------------------------------
+# Define a function with multiple return values
+calculate <- function(a, b) {
+  sum <- a + b
+  difference <- a - b
+  product <- a * b
+  quotient <- if (b != 0) a / b else NA
+  
+  return(list(sum = sum, difference = difference, product = product, quotient = quotient))
+}
+
+# Call the function with two arguments
+result <- calculate(10, 2)
+
+#access all element
+print(result)
+
+# Access individual results
+print(result$sum)         # Sum
+print(result$difference)  # Difference
+print(result$product)     # Product
+print(result$quotient)    # Quotient
+--------------------------------------------------------------
+
+# Define and use a lambda function inline
+result <- (function(x, y) x + y)(3, 5)
+print(result)
+
+-------------------------------------------------------
+
+# Use a lambda function with lapply
+numbers <- list(1, 2, 3, 4)
+squared <- lapply(numbers, function(x) x^2)
+print(squared)
+
+-------------------------------------------------------
+
+factorial_recursive <- function(n) {
+  if (n == 1)
+    { return(1)
+  }else
+  return(n * factorial_recursive(n - 1))
+}
+factorial_recursive(5)  # Output: 120
