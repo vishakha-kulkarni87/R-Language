@@ -1,0 +1,157 @@
+What is a Vector in R?
+A vector in R is a basic data structure that holds a sequence of values of the same type. These types can be:
+
+Numeric (e.g., numbers like 1, 2.5, -3)
+Character (e.g., "apple", "banana")
+Logical (e.g., TRUE, FALSE)
+Vectors are commonly used because they allow us to store and manipulate data efficiently.
+
+Creating and Using Vectors
+  # 1. Numeric Vector
+numbers <- c(10, 20, 30, 40)
+print(numbers)
+
+# 2. Character Vector
+fruits <- c("apple", "banana", "cherry")
+print(fruits)
+
+# 3. Logical Vector
+is_even <- c(TRUE, FALSE, TRUE, FALSE)
+print(is_even)
+
+# 4. Performing Operations on a Vector
+# Adding 5 to each number in the numeric vector
+numbers_plus_five <- numbers + 5
+print(numbers_plus_five)
+
+# Checking if numbers are greater than 25
+greater_than_25 <- numbers > 25
+print(greater_than_25)
+
+  Access Vector Elements
+  # Solution
+scores <- c(85, 90, 78, 88, 76)
+
+# Access the second element
+second_element <- scores[2]
+
+# Access the last three elements
+last_three <- scores[3:5]
+
+print(second_element)
+print(last_three)
+-----------------------------------------------------------------------------------
+  Imagine you want to calculate the total price of several items:
+# Prices of items
+prices <- c(10, 20, 15)
+
+# Quantities of each item purchased
+quantities <- c(2, 3, 1)
+
+# Calculate total price for each item
+total_prices <- prices * quantities
+print(total_prices)
+
+# Calculate the grand total
+grand_total <- sum(total_prices)
+print(grand_total)
+
+  ----------------------------------------------------------------------
+
+Create a vector ages with values 12, 25, 18, 30, 15, 22.
+
+Find all ages greater than 18.
+Count how many elements are greater than 18.
+
+  # Solution
+ages <- c(12, 25, 18, 30, 15, 22)
+
+# Find ages greater than 18
+above_18 <- ages[ages > 18]
+
+# Count elements greater than 18
+count_above_18 <- length(above_18)
+
+print(above_18)
+print(count_above_18)
+
+  ------------------------------------------------------------------------
+
+  Create two vectors, even_numbers and odd_numbers:
+even_numbers = 2, 4, 6, 8
+odd_numbers = 1, 3, 5, 7
+
+Combine them into a single vector all_numbers.
+Sort all_numbers in ascending order.
+
+  # Solution
+even_numbers <- c(2, 4, 6, 8)
+odd_numbers <- c(1, 3, 5, 7)
+
+# Combine vectors
+all_numbers <- c(even_numbers, odd_numbers)
+
+# Sort in ascending order
+sorted_numbers <- sort(all_numbers)
+
+print(sorted_numbers)
+--------------------------------------------------------
+
+  Create a vector temperatures with values 35, 40, 42, 30, 28, 25.
+
+Find all temperatures greater than 35.
+Replace all temperatures greater than 35 with NA.
+
+  # Solution
+temperatures <- c(35, 40, 42, 30, 28, 25)
+
+# Find temperatures greater than 35
+above_35 <- temperatures[temperatures > 35]
+
+# Replace temperatures greater than 35 with NA
+temperatures[temperatures > 35] <- NA
+
+print(above_35)
+print(temperatures)
+-------------------------------------------------------------------------
+  Create a vector marks with values 45, 67, 80, 90, 55.
+
+Find the minimum, maximum, and average marks.
+
+  # Solution
+marks <- c(45, 67, 80, 90, 55)
+
+# Find minimum, maximum, and average
+min_marks <- min(marks)
+max_marks <- max(marks)
+avg_marks <- mean(marks)
+
+print(min_marks)
+print(max_marks)
+print(avg_marks)
+-------------------------------------question-------------------------------------------
+  ------------------------------------------------------------
+
+Perform Mathematical Operations
+Question:
+Create a vector prices with values 100, 200, 150, 300.
+
+Apply a 10% discount to all prices.
+Find the total of the discounted prices.
+
+  # Solution
+prices <- c(100, 200, 150, 300)
+
+# Apply 10% discount
+
+
+discount_percentages <-10
+
+# Apply formula element-wise
+discounted_prices <- prices * (1 - discount_percentages / 100)
+
+# Find total of discounted prices
+total_discounted <- sum(discounted_prices)
+
+print(discounted_prices)
+print(total_discounted)
