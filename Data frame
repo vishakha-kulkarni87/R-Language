@@ -1,0 +1,125 @@
+# Create a DataFrame
+students <- data.frame(
+  Name = c("Alice", "Bob", "Charlie"),
+  Age = c(20, 22, 21),
+  Score = c(85, 90, 88)
+)
+
+# Print the DataFrame
+print(students)
+
+output
+     Name Age Score
+1   Alice  20    85
+2     Bob  22    90
+3 Charlie  21    88
+
+--------------------------------------------------------------------------------------------
+Accessing Data in a DataFrame
+
+Access a specific column:
+students$Name
+Output:
+[1] "Alice" "Bob" "Charlie"
+
+Access a specific row:
+students[2, ]
+Output:
+   Name Age Score
+2   Bob  22    90
+
+Access a specific element (row 2, column 3 - Bob’s Score):
+students[2, 3]
+Output:
+[1] 90
+
+Access multiple columns:
+students[, c("Name", "Score")]
+
+Adding a New Column
+students$Grade <- c("A", "A+", "A-")
+print(students)
+Output:
+     Name Age Score Grade
+1   Alice  20    85     A
+2     Bob  22    90    A+
+3 Charlie  21    88    A-
+
+Filtering Data
+-------------------
+
+Example: Select students with scores greater than 85.
+high_scorers <- students[students$Score > 85, ]
+print(high_scorers)
+Output:
+     Name Age Score Grade
+2     Bob  22    90    A+
+3 Charlie  21    88    A-
+---------------------------------------------------------------
+# Create a DataFrame
+students <- data.frame(
+  Name = c("Alice", "Bob", "Charlie", "David", "Eva", "Frank"),
+  Age = c(20, 22, 21, 23, 20, 24),
+  Score = c(85, 90, 88, 92, 79, 95)
+)
+
+# Print the DataFrame
+print(students)
+
+
+head(students, 3)  # Show first 3 rows
+Output:
+     Name Age Score
+1   Alice  20    85
+2     Bob  22    90
+3 Charlie  21    88
+
+tail(students, 2)  # Show last 2 rows
+Output:
+    Name Age Score
+5   Eva  20    79
+6 Frank  24    95
+
+str(students)
+Output:
+'data.frame': 6 obs. of  3 variables:
+ $ Name : chr  "Alice" "Bob" "Charlie" "David" ...
+ $ Age  : num  20 22 21 23 20 24
+ $ Score: num  85 90 88 92 79 95
+Explanation:
+6 obs. → 6 observations (rows)
+3 variables → 3 columns (Name, Age, Score)
+chr → Character type (for Name)
+num → Numeric type (for Age and Score)
+
+summary(students)
+Output:
+     Name                Age          Score      
+ Length:6           Min.   :20.0   Min.   :79.0  
+ Class :character   1st Qu.:20.2   1st Qu.:86.2  
+ Mode  :character   Median :21.5   Median :89.0  
+                    Mean   :21.7   Mean   :88.2  
+                    3rd Qu.:23.0   3rd Qu.:91.0  
+                    Max.   :24.0   Max.   :95.0  
+Explanation:
+Min, Max, Mean, Median values for numerical columns (Age, Score).
+Length, Class, and Mode for character columns (Name).
+
+nrow(students)
+Output:
+[1] 6
+
+ncol(students)
+Output:
+[1] 3
+
+dim(students)
+Output:
+[1] 6 3
+Explanation:
+6 rows
+3 columns
+
+colnames(students)
+Output:
+[1] "Name" "Age" "Score"
