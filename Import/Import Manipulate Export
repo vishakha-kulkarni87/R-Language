@@ -1,0 +1,32 @@
+data1<-read.csv(file.choose(), header = T)   #to open file / import
+
+data1$Bonusmarks <- data1$Marks * 0.1  # 10% bonusmarks calculation in another column
+
+data1$Gender[data1$Name == "Simran"] <- "Female"   #to change the gender of simran
+
+data1$Name[data1$Name == "Zoya"] <- "Neetu"     #update a name of Zoya
+
+r1<-data.frame(Name="Ravi",Roll.No="5",Marks=98,bonus="105")  #add new row in data1
+data1<-rbind(data1,r1)
+
+
+data<-data[-41,]  #to delete a row
+
+data<-data[,-7]  #to delete a column
+
+data1 <- data1[complete.cases(data1), ]  #to delete a empty row
+
+
+install.packages("ggplot2")  #to install ggplot2
+
+
+
+#to represent data in bargraph
+
+library(ggplot2)
+ggplot(data1, aes(x = Gender, y = Result)) + 
+  geom_point(color = "blue") + 
+  labs(title = "Scatter Plot of Marks vs Result", x = "Marks", y = "Result")
+
+
+
